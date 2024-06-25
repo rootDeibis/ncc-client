@@ -3,6 +3,7 @@ package me.rootdeibis.sixnine.client;
 
 import me.guichaguri.betterfps.BetterFps;
 import me.guichaguri.betterfps.BetterFpsClient;
+import me.rootdeibis.nc.event.EventManager;
 import me.rootdeibis.sixnine.client.gui.Notification;
 import me.rootdeibis.sixnine.client.gui.notification.NotificationManager;
 import me.rootdeibis.sixnine.utils.font.FontUtils;
@@ -16,7 +17,7 @@ import java.util.TimerTask;
 
 public class NCClient {
 
-    public static EntityPlayer thePlayer;
+    public static EventManager eventManager;
 
 
     public static void run() {

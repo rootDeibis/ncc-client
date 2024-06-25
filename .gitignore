@@ -8,3 +8,5 @@ libs
 .gradle
 Mixins.iml
 .idea
+/.idea/
+/.mixin.out/

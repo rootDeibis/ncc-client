@@ -1,4 +1,4 @@
-package me.rootdeibis.sixnine.client.mixin.mixins.client;
+package me.rootdeibis.nc.client.mixins.accessors;
 
 import net.minecraft.client.renderer.EntityRenderer;
 import org.spongepowered.asm.mixin.Mixin;

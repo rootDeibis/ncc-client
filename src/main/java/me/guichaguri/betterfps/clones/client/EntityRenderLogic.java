@@ -3,7 +3,7 @@ package me.guichaguri.betterfps.clones.client;
 import me.guichaguri.betterfps.transformers.cloner.CopyBoolCondition;
 import me.guichaguri.betterfps.transformers.cloner.CopyMode;
 import me.guichaguri.betterfps.transformers.cloner.CopyMode.Mode;
-import me.rootdeibis.sixnine.client.mixin.mixins.client.EntityRendererAccessor;
+import me.rootdeibis.nc.client.mixins.accessors.EntityRendererAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.resources.IResourceManager;

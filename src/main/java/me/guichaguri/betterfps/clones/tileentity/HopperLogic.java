@@ -4,6 +4,7 @@ import me.guichaguri.betterfps.transformers.cloner.CopyMode;
 import me.guichaguri.betterfps.transformers.cloner.CopyMode.Mode;
 import me.guichaguri.betterfps.transformers.cloner.Named;
 import me.guichaguri.betterfps.tweaker.Naming;
+import me.rootdeibis.nc.client.mixins.accessors.TileEntityHopperAccessor;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
@@ -31,20 +32,22 @@ public class HopperLogic extends TileEntityHopper {
         if(iinventory != null) {
             EnumFacing enumfacing = EnumFacing.DOWN;
 
-            //if(isInventoryEmpty(iinventory, enumfacing)) return false;
+            TileEntityHopperAccessor tileEntityHopperAccessor = (TileEntityHopperAccessor) hopperTE;
+
+            if(tileEntityHopperAccessor.isInventoryEmpty(iinventory, enumfacing)) return false;
 
             if(iinventory instanceof ISidedInventory) {
                 ISidedInventory isidedinventory = (ISidedInventory)iinventory;
                 int[] aint = isidedinventory.getSlotsForFace(enumfacing);
 
                 for(int i = 0; i < aint.length; ++i) {
-                    //if(pullItemFromSlot(hopper, iinventory, aint[i], enumfacing)) return true;
+                    if(tileEntityHopperAccessor.pullItemFromSlot(hopper, iinventory, aint[i], enumfacing)) return true;
                 }
             } else {
                 int j = iinventory.getSizeInventory();
 
                 for(int k = 0; k < j; ++k) {
-                   // if(pullItemFromSlot(hopper, iinventory, k, enumfacing)) return true;
+                   if(tileEntityHopperAccessor.pullItemFromSlot(hopper, iinventory, k, enumfacing)) return true;
                 }
             }
         } else if(hopperTE == null || hopperTE.canPickupDrops) {
@@ -67,9 +70,12 @@ public class HopperLogic extends TileEntityHopper {
 
     @Override
     public void update() {
+        TileEntityHopperAccessor tileEntityHopperAccessor = (TileEntityHopperAccessor) this;
+
         if(this.worldObj != null && !this.worldObj.isRemote) {
-            //--transferCooldown;
-            //isOnTransferCooldown = transferCooldown > 0;
+
+            tileEntityHopperAccessor.setTransferCooldown(tileEntityHopperAccessor.transferCooldown() - 1);
+            isOnTransferCooldown = tileEntityHopperAccessor.transferCooldown() > 0;
 
             if(!this.isOnTransferCooldown()) {
                 this.setTransferCooldown(2); // Let the server breathe

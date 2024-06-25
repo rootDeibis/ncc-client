@@ -1,4 +1,4 @@
-package me.rootdeibis.sixnine.client.mixin.mixins.client;
+package me.rootdeibis.nc.client.mixins.accessors;
 
 import net.minecraft.tileentity.TileEntityBeacon;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,7 +10,6 @@ import java.util.List;
 public interface TileEntityBeaconAccessor {
 
     @Accessor("beamSegments")
-
     public List<TileEntityBeacon.BeamSegment> beamSegments();
 
     @Accessor("isComplete")

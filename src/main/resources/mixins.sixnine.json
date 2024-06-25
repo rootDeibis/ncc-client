@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "verbose": true,
+  "package": "me.rootdeibis.sixnine.client.mixin.mixins",
+  "refmap": "mixins.sixnine.refmap.json",
+  "mixins": [
+    "MinecraftMixin",
+    "MixinGuiScreen",
+    "MixinGui",
+    "client.EntityRendererAccessor"
+  ]
+}

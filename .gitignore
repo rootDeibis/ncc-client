@@ -1,0 +1,10 @@
+gradle/wrapper/gradle-wrapper.jar
+run
+build
+config;betterfps.json
+out.bat
+logs
+libs
+.gradle
+Mixins.iml
+.idea

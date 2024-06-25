@@ -1,12 +1,10 @@
 package me.rootdeibis.sixnine.client.gui;
 
-import me.rootdeibis.sixnine.utils.GlUtils;
-import me.rootdeibis.sixnine.utils.TimerUtils;
-import me.rootdeibis.sixnine.utils.animation.normal.Animation;
-import me.rootdeibis.sixnine.utils.animation.normal.Direction;
-import me.rootdeibis.sixnine.utils.animation.normal.impl.DecelerateAnimation;
-import me.rootdeibis.sixnine.utils.animation.normal.impl.EaseBackIn;
-import me.rootdeibis.sixnine.utils.render.RoundedUtils;
+import me.rootdeibis.nc.utils.TimerUtils;
+import me.rootdeibis.nc.utils.animation.normal.Animation;
+import me.rootdeibis.nc.utils.animation.normal.Direction;
+import me.rootdeibis.nc.utils.animation.normal.impl.DecelerateAnimation;
+import me.rootdeibis.nc.utils.render.RoundedUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.ScaledResolution;

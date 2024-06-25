@@ -4,20 +4,15 @@ package me.rootdeibis.sixnine.client.gui.main;
 
 
 import me.guichaguri.betterfps.gui.GuiBetterFpsConfig;
-import me.rootdeibis.sixnine.client.NCClient;
-import me.rootdeibis.sixnine.client.gui.Notification;
-import me.rootdeibis.sixnine.utils.font.FontUtils;
-import me.rootdeibis.sixnine.utils.gui.PanoramaRender;
-import me.rootdeibis.sixnine.utils.mouse.MouseUtils;
-import me.rootdeibis.sixnine.utils.render.RenderUtils;
-import me.rootdeibis.sixnine.utils.render.RoundedUtils;
+import me.rootdeibis.nc.utils.font.FontUtils;
+import me.rootdeibis.nc.utils.gui.PanoramaRender;
+import me.rootdeibis.nc.utils.mouse.MouseUtils;
+import me.rootdeibis.nc.utils.render.RenderUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
-import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.Sys;
 
 
 import java.awt.*;
@@ -84,7 +79,6 @@ public class GuiMainScreen extends GuiScreen {
                 200, 40, 255);
 
 
-        GlStateManager.enableAlpha();
 
         GlStateManager.disableTexture2D();
 
@@ -104,11 +98,6 @@ public class GuiMainScreen extends GuiScreen {
 
         this.drawPlayButtons(sr, mouseX, mouseY, partialTicks);
 
-        if(Minecraft.getMinecraft().thePlayer != null) {
-
-            System.out.println("AKSPODKASKPODKOPAS POROOOT PUTAUISDI0UJAS ");
-            GuiInventory.drawEntityOnScreen(0, 0, 1, (float) mouseX, (float)mouseY, Minecraft.getMinecraft().thePlayer);
-        }
 
 
 

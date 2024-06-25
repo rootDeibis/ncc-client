@@ -4,9 +4,7 @@ import me.rootdeibis.nc.event.events.TickEvent;
 import me.rootdeibis.sixnine.client.NCClient;
 import me.rootdeibis.sixnine.client.gui.GuiSplashScreen;
 
-import me.rootdeibis.sixnine.client.gui.Notification;
 import me.rootdeibis.sixnine.client.gui.main.GuiMainScreen;
-import me.rootdeibis.sixnine.utils.font.FontUtils;
 import net.minecraft.client.Minecraft;
 
 import net.minecraft.client.gui.GuiMainMenu;
@@ -14,7 +12,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.texture.TextureManager;
 
 import net.minecraft.client.resources.DefaultResourcePack;
-import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.opengl.Display;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +19,6 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 

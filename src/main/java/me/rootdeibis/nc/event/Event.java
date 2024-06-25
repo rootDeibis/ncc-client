@@ -1,6 +1,8 @@
 package me.rootdeibis.nc.event;
 
 
+import me.rootdeibis.nc.NCClient;
+
 public abstract class Event {
 
 
@@ -8,6 +10,8 @@ public abstract class Event {
 
 
     public Event call() {
+        this.handle(this);
+
         return this;
     }
 
@@ -15,6 +19,13 @@ public abstract class Event {
         this.isCancelled = cancelled;
     }
 
+    private void handle(Event event){
+        if(!NCClient.INSTANCE.getEventManager().handlers.containsKey(event.getClass())) return;
+
+        for (EventHandler eventHandler : NCClient.INSTANCE.getEventManager().handlers.get(event.getClass())) {
+            eventHandler.handle(event);
+        }
+    }
 
     public boolean isCancelled() {
         return isCancelled;

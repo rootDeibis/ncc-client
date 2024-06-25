@@ -1,4 +1,4 @@
-package me.rootdeibis.sixnine.client.mixin;
+package me.rootdeibis.nc.client.tweaker;
 
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.Launch;
@@ -13,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class SixNineTweaker implements ITweaker {
+public class NCCTweaker implements ITweaker {
+
     private List<String> launchArgs = new ArrayList<>();
 
     public static boolean hasOptifine = false;
@@ -50,6 +51,8 @@ public class SixNineTweaker implements ITweaker {
 
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
+
+
 
         MixinBootstrap.init();
 

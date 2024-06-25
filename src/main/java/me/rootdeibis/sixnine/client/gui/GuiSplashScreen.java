@@ -1,8 +1,8 @@
 package me.rootdeibis.sixnine.client.gui;
 
-import me.rootdeibis.sixnine.utils.animation.normal.Animation;
+import me.rootdeibis.nc.utils.animation.normal.Animation;
 
-import me.rootdeibis.sixnine.utils.render.RenderUtils;
+import me.rootdeibis.nc.utils.render.RenderUtils;
 import net.minecraft.client.Minecraft;
 
 import net.minecraft.client.gui.GuiScreen;

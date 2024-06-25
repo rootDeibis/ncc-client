@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "verbose": true,
+  "package": "me.rootdeibis.nc.client.mixins",
+  "refmap": "mixins.nc.refmap.json",
+  "mixins": [
+    "MinecraftMixin",
+    "FontRendererMixin",
+    "accessors.GuiAccessor"
+  ]
+}

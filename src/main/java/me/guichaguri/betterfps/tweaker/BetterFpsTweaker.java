@@ -21,8 +21,8 @@ public class BetterFpsTweaker implements ITweaker {
             "me.guichaguri.betterfps.transformers.EventTransformer",
             "me.guichaguri.betterfps.transformers.MiscTransformer",
             "me.guichaguri.betterfps.transformers.cloner.ClonerTransformer",
-            //"me.guichaguri.betterfps.transformers.VisualChunkTransformer"
-            //"me.guichaguri.betterfps.transformers.CapTransformer"
+            "me.guichaguri.betterfps.transformers.VisualChunkTransformer",
+            "me.guichaguri.betterfps.transformers.CapTransformer"
     };
 
     private final String[] EXCLUDED = new String[]{

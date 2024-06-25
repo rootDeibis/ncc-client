@@ -2,11 +2,11 @@ package me.rootdeibis.sixnine.client.gui.main;
 
 
 
-import me.rootdeibis.sixnine.utils.animation.normal.impl.EaseInOutQuad;
+import me.rootdeibis.nc.utils.animation.normal.impl.EaseInOutQuad;
 
 
-import me.rootdeibis.sixnine.utils.mouse.MouseUtils;
-import me.rootdeibis.sixnine.utils.render.RoundedUtils;
+import me.rootdeibis.nc.utils.mouse.MouseUtils;
+import me.rootdeibis.nc.utils.render.RoundedUtils;
 
 
 import net.minecraft.client.Minecraft;

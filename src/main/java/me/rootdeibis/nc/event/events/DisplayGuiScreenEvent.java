@@ -16,6 +16,6 @@ public class DisplayGuiScreenEvent extends Event {
     }
 
     public GuiScreen getGuiScreen() {
-        return guiScreen;
+        return this.guiScreen;
     }
 }

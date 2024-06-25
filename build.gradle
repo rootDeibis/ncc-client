@@ -34,7 +34,7 @@ compileJava.options.encoding = 'UTF-8'
 
 minecraft {
     version = "1.8.9"
-    tweakClass = "me.rootdeibis.sixnine.client.mixin.SixNineTweaker"
+    tweakClass = "me.rootdeibis.nc.client.tweaker.NCCTweaker"
     runDir = "run"
     mappings = "stable_20"
     makeObfSourceJar = false
@@ -74,7 +74,7 @@ dependencies {
 
 mixin {
     defaultObfuscationEnv 'notch'
-    add sourceSets.main, "mixins.sixnine.refmap.json"
+    add sourceSets.main, "mixins.nc.refmap.json"
 }
 
 processResources {
@@ -98,8 +98,8 @@ jar {
 
 jar {
     manifest.attributes(
-            "MixinConfigs": 'mixins.sixnine.json',
-            "TweakClass": "me.rootdeibis.sixnine.client.mixin.SixNineTweaker",
+            "MixinConfigs": 'mixins.nc.json',
+            "TweakClass": "me.rootdeibis.nc.client.tweaker.NCCTweaker",
             "TweakOrder": 0,
             "Manifest-Version": 1.0
     )

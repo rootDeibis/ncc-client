@@ -110,7 +110,7 @@ public class BeaconLogic extends TileEntityBeacon {
 
         accessor.setCompleted(true);
         accessor.beamSegments().clear();
-        BeamSegment beam =  new BeamSegment(EntitySheep.func_175513_a(EnumDyeColor.WHITE));
+        BeamSegment beam =  new BeamSegment(EntitySheep.getDyeRgb(EnumDyeColor.WHITE));
         float[] oldColor = null;
         accessor.beamSegments().add(beam);
         int height = worldObj.getActualHeight();
@@ -120,9 +120,9 @@ public class BeaconLogic extends TileEntityBeacon {
             Block b = state.getBlock();
             float[] color;
             if(b == Blocks.stained_glass) {
-                color = EntitySheep.func_175513_a(state.getValue(BlockStainedGlass.COLOR));
+                color = EntitySheep.getDyeRgb(state.getValue(BlockStainedGlass.COLOR));
             } else if(b == Blocks.stained_glass_pane) {
-                color = EntitySheep.func_175513_a(state.getValue(BlockStainedGlassPane.COLOR));
+                color = EntitySheep.getDyeRgb(state.getValue(BlockStainedGlassPane.COLOR));
             } else {
                 if(b.getLightOpacity() >= 15) {
                    accessor.setCompleted(false);
@@ -163,6 +163,10 @@ public class BeaconLogic extends TileEntityBeacon {
         }
     }
 
+    private boolean isBeaconBase(Block block) {
+        return block == Blocks.diamond_block || block == Blocks.gold_block || block == Blocks.iron_block;
+    }
+
     private void updateLevels(int x, int y, int z) {
         // Checks if the beacon should be active and how many levels it should have.
         TileEntityBeaconAccessor accessor = (TileEntityBeaconAccessor) this;
@@ -177,6 +181,11 @@ public class BeaconLogic extends TileEntityBeacon {
                 for(int blockZ = z - lvl; blockZ <= z + lvl; blockZ++) {
                     BlockPos blockPos = new BlockPos(blockX, blockY, blockZ);
                     Block block = worldObj.getBlockState(blockPos).getBlock();
+
+                    if(!isBeaconBase(block)) {
+                        accessor.setLevels(accessor.getLevels() - 1);
+                        break lvlLoop;
+                    }
 
                 }
             }

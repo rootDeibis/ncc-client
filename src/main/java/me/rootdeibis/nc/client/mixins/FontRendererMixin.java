@@ -1,7 +1,7 @@
 package me.rootdeibis.nc.client.mixins;
 
+import me.rootdeibis.nc.NCClient;
 import me.rootdeibis.nc.event.events.FontRenderEvent;
-import me.rootdeibis.sixnine.client.NCClient;
 import net.minecraft.client.gui.FontRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -20,6 +20,10 @@ public abstract class FontRendererMixin {
     @Shadow
     protected abstract void resetStyles();
 
+    /**
+     * @author
+     * @reason
+     */
     @Overwrite
     public int drawStringWithShadow(String text, float x, float y, int color) {
         // DISABLE SHADOW IF FPS MOD ENABLED
@@ -28,7 +32,7 @@ public abstract class FontRendererMixin {
 
     @ModifyVariable(method = "renderString", at = @At("HEAD"), ordinal = 0)
     private String renderString(String text) {
-        if(text == null || NCClient.eventManager == null) {
+        if(text == null || NCClient.INSTANCE.getEventManager() == null) {
             return text;
         }
 
@@ -40,7 +44,7 @@ public abstract class FontRendererMixin {
 
     @ModifyVariable(method = "getStringWidth", at = @At("HEAD"), ordinal = 0)
     private String getStringWidth(String text) {
-        if(text == null ||  NCClient.eventManager == null) {
+        if(text == null ||  NCClient.INSTANCE.getEventManager() == null) {
             return text;
         }
 

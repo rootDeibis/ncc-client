@@ -14,7 +14,8 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.util.Color;
+
+import java.awt.*;
 
 
 public class GuiMainButton{

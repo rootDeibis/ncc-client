@@ -7,6 +7,10 @@
   "mixins": [
     "MinecraftMixin",
     "FontRendererMixin",
-    "accessors.GuiAccessor"
+    "accessors.GuiAccessor",
+    "accessors.TileEntityHopperAccessor",
+    "accessors.EntityRendererAccessor",
+    "accessors.TileEntityBeaconAccessor",
+    "accessors.TileEntityBeaconBeamAccessor"
   ]
 }

@@ -170,6 +170,14 @@ public class ColorUtils {
         return trueColor ? ColorUtils.interpolateColorHue(start, end, angle / 360f) : ColorUtils.getInterpolateColor(start, end, angle / 360f);
     }
 
+    public static Color fromTo(int speed, Color start, Color end) {
+        int angle = (int) (((System.currentTimeMillis()) / speed) % 360);
+
+        if(angle < 180) return end;
+
+        return ColorUtils.getInterpolateColor(start, end, angle / 360f);
+    }
+
     private static Color getInterpolateColor(Color color1, Color color2, float amount) {
         amount = Math.min(1, Math.max(0, amount));
         return new Color(MathUtils.interpolateInt(color1.getRed(), color2.getRed(), amount), MathUtils.interpolateInt(color1.getGreen(), color2.getGreen(), amount), MathUtils.interpolateInt(color1.getBlue(), color2.getBlue(), amount), MathUtils.interpolateInt(color1.getAlpha(), color2.getAlpha(), amount));
@@ -222,6 +230,8 @@ public class ColorUtils {
         Color c =  new Color(color);
         return new Color(c.getRed(), c.getGreen(), c.getBlue(), opacity);
     }
+
+
 
     public static HalloweenColorUtils getHalloweenColor() {
         return new HalloweenColorUtils();

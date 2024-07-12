@@ -63,7 +63,7 @@ public abstract class MinecraftMixin {
                 inputstream1 = this.mcDefaultResourcePack.getInputStreamAssets(new ResourceLocation("sixnine/32.png"));
 
                 if (inputstream != null && inputstream1 != null) {
-                    Display.setIcon(new ByteBuffer[]{this.readImageToBuffer(inputstream), this.readImageToBuffer(inputstream1)});
+                    Display.setIcon(new ByteBuffer[]{this.readImageToBuffer(inputstream)});
                 }
             } catch (IOException ioexception) {
                 ioexception.printStackTrace();
@@ -78,7 +78,7 @@ public abstract class MinecraftMixin {
         Change Window Title
      */
     @Redirect(method = "createDisplay", at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/Display;setTitle(Ljava/lang/String;)V"))
-    public void overwriteWindowTitle(String title) {
+    public void createDisplay(String title) {
         Display.setTitle(NCClient.getWindowTitle());
     }
 

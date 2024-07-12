@@ -1,5 +1,6 @@
 package me.rootdeibis.nc.client.listeners;
 
+import me.rootdeibis.nc.client.menu.GUINCMainMenu;
 import me.rootdeibis.nc.event.Listener;
 import me.rootdeibis.nc.event.TargetHandler;
 import me.rootdeibis.nc.event.events.DisplayGuiScreenEvent;
@@ -12,7 +13,7 @@ public class GuiCustomListener implements Listener {
     public void onDisplayScreen(DisplayGuiScreenEvent e) {
 
         if(e.getGuiScreen() instanceof GuiMainMenu) {
-           e.change(new GuiMainScreen());
+           e.change(new GUINCMainMenu());
         }
     }
 }

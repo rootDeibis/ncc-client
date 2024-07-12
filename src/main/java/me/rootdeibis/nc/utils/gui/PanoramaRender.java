@@ -1,9 +1,7 @@
 package me.rootdeibis.nc.utils.gui;
 
 import me.rootdeibis.nc.client.mixins.accessors.GuiAccessor;
-import me.rootdeibis.sixnine.client.mixin.mixins.MixinGui;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;

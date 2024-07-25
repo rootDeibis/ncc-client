@@ -1,0 +1,1 @@
+- BetterFPS is used (https://github.com/Guichaguri/BetterFps)
